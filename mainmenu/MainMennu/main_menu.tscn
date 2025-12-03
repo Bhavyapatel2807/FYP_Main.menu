@@ -1,0 +1,312 @@
+[gd_scene load_steps=18 format=3 uid="uid://cqe4aavjfjayw"]
+
+[ext_resource type="PackedScene" uid="uid://ca1el2wmges8r" path="res://MainMenuBoard.glb" id="1_gn7dm"]
+[ext_resource type="FontFile" uid="uid://cdyxbykwo0b3b" path="res://Fonts/SHERLOCK HOLMES.ttf" id="1_k1tax"]
+[ext_resource type="FontFile" uid="uid://cr6fj25if13rr" path="res://Fonts/WATSON.ttf" id="2_faky0"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_gn7dm"]
+density = 0.15
+albedo = Color(1, 1, 0.894118, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gn7dm"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_pl3s1"]
+sky_material = SubResource("ProceduralSkyMaterial_gn7dm")
+
+[sub_resource type="Environment" id="Environment_k1tax"]
+background_mode = 1
+sky = SubResource("Sky_pl3s1")
+tonemap_mode = 2
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gn7dm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pl3s1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k1tax"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_faky0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_viyoc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nw8xf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uv7b0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v6nvv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_64a2j"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_k1tax"]
+blend_mode = 4
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[node name="MainMenu" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.02668, -0.0995846, 0.0420265)
+fov = 80.0
+
+[node name="MainMenuBoard" parent="." instance=ExtResource("1_gn7dm")]
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(0.996568, 0, 0, 0, 3.13729, 0, 0, 0, 5.79323, 1.84737, 0, 0)
+material = SubResource("FogMaterial_gn7dm")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_k1tax")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.63594, -4.22763, 0)
+light_color = Color(1, 1, 0.87451, 1)
+light_energy = 16.0
+light_volumetric_fog_energy = 3.101
+shadow_enabled = true
+omni_range = 13.3438
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(0.0605303, 0.0605303, 0.0605303, 1)
+anchors_preset = -1
+anchor_left = 0.440104
+anchor_top = 0.459877
+anchor_right = 0.58316
+anchor_bottom = 0.570988
+offset_left = -50.9998
+offset_top = -1.00031
+offset_right = 115.278
+offset_bottom = 37.5552
+scale = Vector2(0.8, 1)
+size_flags_horizontal = 4
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("1_k1tax")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gn7dm")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_gn7dm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gn7dm")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_pl3s1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_k1tax")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_faky0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_viyoc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_nw8xf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_uv7b0")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_v6nvv")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_64a2j")
+text = "CONTINUE"
+metadata/target_pos = Vector3(3.334, -0.464, 3)
+
+[node name="Button2" type="Button" parent="."]
+modulate = Color(0.0605303, 0.0605303, 0.0605303, 1)
+anchors_preset = -1
+anchor_left = 0.238715
+anchor_top = 0.393317
+anchor_right = 0.388125
+anchor_bottom = 0.393317
+offset_left = -7.99988
+offset_top = 66.1306
+offset_right = 61.0237
+offset_bottom = 138.131
+rotation = -0.705992
+scale = Vector2(0.8, 1)
+size_flags_horizontal = 4
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("1_k1tax")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gn7dm")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_gn7dm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gn7dm")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_pl3s1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_k1tax")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_faky0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_viyoc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_nw8xf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_uv7b0")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_v6nvv")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_64a2j")
+text = "NEW"
+metadata/target_pos = Vector3(2.372, 0.786, 3.294)
+
+[node name="Button3" type="Button" parent="."]
+modulate = Color(0.0605303, 0.0605303, 0.0605303, 1)
+anchors_preset = -1
+anchor_left = 0.619792
+anchor_top = 0.279321
+anchor_right = 0.767904
+anchor_bottom = 0.367025
+offset_left = -35.0
+offset_top = -2.0
+offset_right = 105.076
+offset_bottom = 37.4918
+rotation = -0.0903776
+scale = Vector2(0.8, 1)
+size_flags_horizontal = 4
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("1_k1tax")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gn7dm")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_gn7dm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gn7dm")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_pl3s1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_k1tax")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_faky0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_viyoc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_nw8xf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_uv7b0")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_v6nvv")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_64a2j")
+text = "OPTIONS
+"
+metadata/target_pos = Vector3(2.372, 1.6, -3.753)
+
+[node name="Button4" type="Button" parent="."]
+modulate = Color(0.0605303, 0.0605303, 0.0605303, 1)
+anchors_preset = -1
+anchor_left = 0.248264
+anchor_top = 0.608025
+anchor_right = 0.344262
+anchor_bottom = 0.826882
+offset_left = 3.0
+offset_top = -44.0
+offset_right = 143.16
+offset_bottom = -9.75427
+rotation = 0.496597
+scale = Vector2(0.8, 1)
+size_flags_horizontal = 4
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("1_k1tax")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gn7dm")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_gn7dm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gn7dm")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_pl3s1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_k1tax")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_faky0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_viyoc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_nw8xf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_uv7b0")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_v6nvv")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_64a2j")
+text = "CREDITS"
+metadata/target_pos = Vector3(2.372, -2.433, 3.938)
+
+[node name="Button5" type="Button" parent="."]
+modulate = Color(0.0605303, 0.0605303, 0.0605303, 1)
+anchors_preset = -1
+anchor_left = 0.671875
+anchor_top = 0.609568
+anchor_right = 0.794013
+anchor_bottom = 0.782418
+offset_left = 9.0
+offset_top = -35.0001
+offset_right = 87.1144
+offset_bottom = 1.08588
+rotation = 0.260427
+scale = Vector2(0.8, 1)
+size_flags_horizontal = 4
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("1_k1tax")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gn7dm")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_gn7dm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gn7dm")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_pl3s1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_k1tax")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_faky0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_viyoc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_nw8xf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_uv7b0")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_v6nvv")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_64a2j")
+text = "EXIT
+"
+metadata/target_pos = Vector3(2.27, -2.239, -4.208)
+
+[node name="Label" type="Label" parent="."]
+material = SubResource("CanvasItemMaterial_k1tax")
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -239.0
+offset_top = 132.0
+offset_right = 225.0
+offset_bottom = 189.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.831373, 0.686275, 0.215686, 1)
+theme_override_colors/font_shadow_color = Color(0.831373, 0.686275, 0.215686, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.686275, 0.215686, 1)
+theme_override_constants/line_spacing = 12
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("2_faky0")
+theme_override_font_sizes/font_size = 40
+text = "SHERLOCK'S LAST CASE"
